@@ -19,7 +19,7 @@ public class Main {
         if (wpisanaLiczba == wylosowanaLiczba) {
             System.out.println("Wygrana");
         } else {
-           System.out.println("pudlo");
+            System.out.println("pudlo");
         }
         int roznica = wpisanaLiczba > wylosowanaLiczba
                 ? wpisanaLiczba - wylosowanaLiczba
@@ -39,10 +39,10 @@ public class Main {
         }
         {
             System.out.println(
-                    switch (roznica){
-                        case 0->"bardzo dobrze";
-                        case 1->"dobrze";
-                        case 2->"doscdobrze";
+                    switch (roznica) {
+                        case 0 -> "bardzo dobrze";
+                        case 1 -> "dobrze";
+                        case 2 -> "doscdobrze";
                         default -> "slabo";
                     }
             );
@@ -50,7 +50,7 @@ public class Main {
             for (int i = 0; i < 10; i++) {
                 System.out.println("Podaj liczbe");
                 wpisanaLiczba = klawiatura.nextInt();
-                if (wpisanaLiczba == wylosowanaLiczba){
+                if (wpisanaLiczba == wylosowanaLiczba) {
                     System.out.println("Wygrana");
                     break;
                 }
@@ -64,13 +64,29 @@ public class Main {
                     System.out.println("Wpisano za malo");
                 }
             }
-                while (wpisanaLiczba != wylosowanaLiczba);
-                System.out.println("WYGRANa");
-            }
-
-
-
-
-
+            while (wpisanaLiczba != wylosowanaLiczba);
+            System.out.println("WYGRANa");
         }
+
+        //zadanie dom8
+        String haslo = "";
+        String maleLitery = "qwertyuiopasdfghjklzxcvbnm";
+        String duzeLitery = "QWERTYUIOPASDFGHJKLZXCVBNM";
+        String znakiSpecjalne = "!@#$%^&*()-_=+/?.,><";
+        String cyfry = "1234567890";
+
+        int losowa;
+
+        for (int i = 0; i < 5; i++) {
+            losowa = (int) (Math.random() + maleLitery.length());
+            haslo = haslo + maleLitery.charAt(losowa);
+            losowa = (int) (Math.random() + duzeLitery.length());
+            haslo = haslo + duzeLitery.charAt(losowa);
+            losowa = (int) (Math.random() + znakiSpecjalne.length());
+            haslo = haslo + znakiSpecjalne.charAt(losowa);
+            losowa = (int) (Math.random() + cyfry.length());
+            haslo = haslo + cyfry.charAt(losowa);
+        }
+        System.out.println("wygenerowane haslo: " + haslo);
     }
+}
