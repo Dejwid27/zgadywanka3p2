@@ -55,7 +55,18 @@ public class Main {
                     break;
                 }
             }
-
+            do {
+                System.out.println("Podaj liczbę");
+                wpisanaLiczba = klawiatura.nextInt();
+                if (wpisanaLiczba > wylosowanaLiczba) {
+                    System.out.println("Wpisano za duzo");
+                } else if (wpisanaLiczba < wylosowanaLiczba) {
+                    System.out.println("Wpisano za malo");
+                }
+            }
+                while (wpisanaLiczba != wylosowanaLiczba);
+                System.out.println("WYGRANa");
+            }
 
 
 
@@ -63,4 +74,3 @@ public class Main {
 
         }
     }
-}
